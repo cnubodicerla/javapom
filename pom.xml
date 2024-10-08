@@ -1,49 +1,64 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven4.0.0.xsd">
- <modelVersion>4.0.0</modelVersion>
- <groupId>com.jdevs</groupId>
- <artifactId>studentapp</artifactId>
- <version>2.9</version>
- <packaging>war</packaging>
- <build>
- <sourceDirectory>src</sourceDirectory>
- <plugins>
- <plugin>
- <artifactId>maven-compiler-plugin</artifactId>
- <version>3.3</version>
- <configuration>
- <source>1.8</source>
- <target>1.8</target>
- </configuration>
- </plugin>
- <plugin>
- <artifactId>maven-war-plugin</artifactId>
- <version>2.6</version>
- <configuration>
- <warSourceDirectory>WebContent</warSourceDirectory>
- <failOnMissingWebXml>false</failOnMissingWebXml>
- </configuration>
- </plugin>
- </plugins>
- </build>
- <distributionManagement>
- <repository>
- <id>deployment</id>
- <name>Internal Releases</name>
- <url>http://10.128.0.11:8081/repository/maven-snapshots/</url>
- </repository>
- <snapshotRepository>
- <id>deployment</id>
- <name>Internal Snapshot Releases</name>
- <url>http://10.128.0.11:8081/repository/maven-snapshots/</url>
- </snapshotRepository>
- </distributionManagement>
- <dependencies>
- <dependency>
- <groupId>javax.servlet</groupId>
- <artifactId>javax.servlet-api</artifactId>
- <version>3.0.1</version>
- </dependency>
- </dependencies>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.jdevs</groupId>
+    <artifactId>studentapp</artifactId>
+    <version>2.9</version>
+    <packaging>war</packaging>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+
+        <plugins>
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven WAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version> <!-- Updated Version -->
+                <configuration>
+                    <warSourceDirectory>WebContent</warSourceDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Distribution Management for Deployment -->
+    <distributionManagement>
+        <repository>
+            <id>deployment</id>
+            <name>Internal Releases</name>
+            <url>http://10.128.0.11:8081/repository/maven-snapshots/</url>
+        </repository>
+        <snapshotRepository>
+            <id>deployment</id>
+            <name>Internal Snapshot Releases</name>
+            <url>http://10.128.0.11:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
 </project>
+
