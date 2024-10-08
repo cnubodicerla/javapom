@@ -1,3 +1,5 @@
+package com.srk.dao;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -13,10 +15,10 @@ public class web extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Set the content type of the response
         response.setContentType("text/html");
-        
+
         // Get the writer to write the response content
         PrintWriter out = response.getWriter();
-        
+
         // Write the HTML content for the DevOps webpage
         out.println("<html>");
         out.println("<head><title>DevOps Page</title></head>");
@@ -32,7 +34,7 @@ public class web extends HttpServlet {
         out.println("<p>DevOps brings Development and Operations together!</p>");
         out.println("</body>");
         out.println("</html>");
-        
+
         // Close the writer
         out.close();
     }
